@@ -7,8 +7,16 @@
 </ion-header>
 
 <ion-content padding>
-  The world is your oyster.
-  <p>
-    If you get lost, the <a href="http://ionicframework.com/docs/v2">docs</a> will be your guide.
-  </p>
+    <button ion-button (click)="getRegistrationID()">get RegistrationID</button>
+    <button ion-button block (click)="setAlias('jasonz_001')">set alias</button>
+    <button ion-button block (click)="getAlias()">get alias</button>
+    <button ion-button block (click)="deleteAlias()">delete alias</button>
+
+    <button ion-button block (click)="addTags(['man','1.0','vip'])">add tags</button>
+    <button ion-button block (click)="setTags(['woman','2.0'])">set tags</button>
+    <button ion-button block (click)="getAllTags()">get all tags</button>
+    <button ion-button block (click)="deleteTags(['2.0'])">delete tags</button>
+    <button ion-button block (click)="cleanTags()">clean tags</button>
+    <button ion-button block (click)="checkTagBindState('vip')">check tag bind state</button>
+
 </ion-content>
