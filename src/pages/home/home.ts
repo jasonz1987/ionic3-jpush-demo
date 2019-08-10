@@ -117,7 +117,46 @@ export class HomePage {
       })
   }
 
+  setBadge(number) {
+    this.jpush.setBadge(number);
+  }
 
+  resetBadge() {
+    this.jpush.resetBadge();
+  }
 
+  getLocalBadge() {
+    this.jpush.getApplicationIconBadgeNumber().then((number)=>{
+      alert(number);
+    }).catch((err)=>{
+      console.log(err);
+    });
+  }
 
+  setLocalBadge(number) {
+      this.jpush.setApplicationIconBadgeNumber(number);
+  }
+
+  addLocalNotification(delay,id) {
+    this.jpush.addLocalNotificationForIOS(delay, id, 1, id, null)
+  }
+
+  deleteLocalNotification(id) {
+    this.jpush.deleteLocalNotificationWithIdentifierKeyInIOS(id);
+  }
+
+  clearLocalNotification() {
+    this.jpush.clearLocalNotifications();
+  }
+
+  getNotificationSetting() {
+    this.jpush.getUserNotificationSettings().then((result)=>{
+      console.log(result);
+      alert(JSON.stringify(result));
+      }).catch(err=>{
+          console.log(err);
+      })
+  }
+
+ 
 }

@@ -26,6 +26,25 @@ export class MyApp {
         console.log(event['registrationId']);
       }, false)
 
+      document.addEventListener("jpush.openNotification", function (event) {
+        console.log("openNotification");
+        console.log(JSON.stringify(event));
+      }, false)
+
+      document.addEventListener("jpush.receiveNotification", function (event) {
+        console.log("receiveNotification");
+        console.log(JSON.stringify(event));
+      }, false)
+
+      document.addEventListener("jpush.backgroundNotification", function (event) {
+        console.log("backgroundNotification");
+        console.log(JSON.stringify(event));
+      }, false)
+
+      document.addEventListener("jpush.receiveMessage", function(event) {
+        console.log("receiveMessage");
+        console.log(JSON.stringify(event));
+      }, false)
     });
   }
 }
